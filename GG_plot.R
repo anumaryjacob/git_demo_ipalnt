@@ -1,5 +1,7 @@
 # learning GG plot
 # February 22, 2015
+#making changes to check
+
 
 install.packages("ggplot2", dependencies = TRUE)
 install.packages("plyr")
