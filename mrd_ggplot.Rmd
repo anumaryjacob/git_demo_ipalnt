@@ -1,0 +1,39 @@
+---
+title: "New_markdownfile"
+output: html_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+install.packages("ggplot2", dependencies = TRUE)
+install.packages("plyr")
+install.packages("ggthemes")
+install.packages("reshape2")
+
+head(iris)
+library("ggplot2")
+library("reshape2")
+library("plyr")
+library("ggthemes")
+
+data.af <- read.delim("~/git_demo_ipalnt/data/clean/Afghanistan.cc.txt", sep = "\t")
+data.al <- read.delim("~/git_demo_ipalnt/data/clean/Albania.cc.txt", sep = "\t")
+data.alg <- read.delim("~/git_demo_ipalnt/data/clean/Algeria.cc.txt", sep = "\t")
+
+data.all <- read.delim("~/git_demo_ipalnt/output/combined_gapMinder.tsv", sep = "\t")
+head(data.all)
+ggplot(data = data.all, aes(x=year, y=gdpPercap, country = "Algeria"))+
+  geom_point(size = 3)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
